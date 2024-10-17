@@ -12,4 +12,4 @@ INTERVAL_MINUTES = 3
 
 
 def get_db_url():
-    return f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{DB_HOST}/{POSTGRES_DB}"
+    return f"postgresql+asyncpg://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{DB_HOST}/{POSTGRES_DB}"

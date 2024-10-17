@@ -6,3 +6,4 @@ pandas==2.2.3
 numpy==2.1.2
 pydantic==2.9.2
 psycopg2-binary==2.9.10
+asyncpg==0.29.0
