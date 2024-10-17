@@ -12,9 +12,9 @@ class WeatherService:
     session_pool: async_sessionmaker[AsyncSession]
 
     async def fetch_and_store_weather(self, latitude: float, longitude: float):
-        async with self.session_pool() as session:
-            weather_data = fetch_weather_data(latitude, longitude)
-            current_weather = get_current_weather(weather_data)
+        weather_data = fetch_weather_data(latitude, longitude)
+        current_weather = get_current_weather(weather_data)
 
+        async with self.session_pool() as session:
             repo = RequestsRepo(session)
             await repo.weather.add_weather_data(current_weather)
