@@ -21,7 +21,7 @@ POSTGRES_DB = os.getenv("POSTGRES_DB")
 
 
 def get_url():
-    return f"postgresql+asyncpg://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{DB_HOST}:{DB_PORT}/{POSTGRES_DB}"
+    return f"postgresql+psycopg2://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{DB_HOST}:{DB_PORT}/{POSTGRES_DB}"
 
 
 def run_migrations_offline() -> None:
