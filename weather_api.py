@@ -3,6 +3,7 @@ import requests_cache
 from openmeteo_sdk.WeatherApiResponse import WeatherApiResponse
 from retry_requests import retry
 
+from config import LATITUDE, LONGITUDE
 from utils import (
     convert_pressure_to_mm_hg,
     convert_wind_direction,
@@ -55,13 +56,8 @@ def get_current_weather(current_data: WeatherApiResponse):
     }
 
 
-
-
 if __name__ == "__main__":
-    latitude = 55.7522
-    longitude = 37.6156
-
-    current_data = fetch_weather_data(latitude, longitude)
+    current_data = fetch_weather_data(LATITUDE, LONGITUDE)
     current_weather = get_current_weather(current_data)
 
     print("Текущая погода:")
