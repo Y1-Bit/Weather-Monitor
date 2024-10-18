@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/usr/src/app/weather
     command: python3 -m app.main
-    restart: unless-stopped	
+    restart: unless-stopped
     env_file:
       - .env
 
