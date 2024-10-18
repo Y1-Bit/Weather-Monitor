@@ -12,6 +12,18 @@ This project is designed for collecting and exporting weather data. It uses an A
    ```bash
    git clone https://github.com/Y1-Bit/Weather-Monitor.git
    cd Weather-Monitor
+   ```
+
+3. Set up your .env file:
+- Create a file named .env in the root of your project.
+- Add the necessary environment variables. Here’s an example template:
+```bash
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=password
+POSTGRES_DB=database
+DB_HOST=database
+```
+
 
 ## Commands
 
