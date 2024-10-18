@@ -3,8 +3,8 @@ from dataclasses import dataclass
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.ext.asyncio.session import AsyncSession, async_sessionmaker
 
-from database.repo.requests import RequestsRepo
 from app.apis.weather_api import fetch_weather_data, get_current_weather
+from app.database.repo.requests import RequestsRepo
 
 
 @dataclass

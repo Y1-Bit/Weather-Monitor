@@ -1,8 +1,9 @@
 import asyncio
 
 from app.config import LATITUDE, LONGITUDE, get_db_url
-from database.setup import create_engine, create_session_pool
-from services.weather_service import WeatherService
+from app.database.setup import create_engine, create_session_pool
+from app.services.data_service import DataExportService
+from app.services.weather_service import WeatherService
 
 
 async def main():

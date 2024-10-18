@@ -1,8 +1,8 @@
+from app.database.models.weater_data import WeatherData
+from app.database.repo.base import BaseRepo
 from sqlalchemy import insert
 
-from app.schemas.weather_schema import WeatherDataModel
-from database.models.weater_data import WeatherData
-from database.repo.base import BaseRepo
+from app.schemas.weather_schema import WeatherDataModel, WeatherDataModelList
 
 
 class WeatherDataRepo(BaseRepo):
