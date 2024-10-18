@@ -1,8 +1,5 @@
 # Weather-Monitor
 
-
-# Weather Data Project
-
 ## Description
 
 This project is designed for collecting and exporting weather data. It uses an API to fetch weather data, saves it in a database, and provides the ability to export the data in Excel format.
@@ -13,8 +10,8 @@ This project is designed for collecting and exporting weather data. It uses an A
 
 2. Clone the repository:
    ```bash
-   git clone <YOUR_REPOSITORY_URL>
-   cd <YOUR_REPOSITORY_FOLDER>
+   git clone https://github.com/Y1-Bit/Weather-Monitor.git
+   cd Weather-Monitor
 
 ## Commands
 
@@ -40,9 +37,3 @@ Export data:
 make export
 ```
 This command exports the latest weather data to the file data/latest_weather_data.xlsx.
-
-
-## Usage
-After executing the commands, you will be able to retrieve and export weather data. Ensure that the API is accessible and correctly configured in the settings.
-
-
