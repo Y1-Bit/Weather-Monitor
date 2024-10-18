@@ -18,3 +18,9 @@ class WeatherService:
         async with self.session_pool() as session:
             repo = RequestsRepo(session)
             await repo.weather.add_weather_data(current_weather)
+
+    async def get_latest_weather_data(self):
+        async with self.session_pool() as session:
+            repo = RequestsRepo(session)
+            data = await repo.weather.get_latest_weather_data(10)
+        return data
