@@ -10,9 +10,9 @@ async def main():
     engine = create_engine(get_db_url(), echo=True)
     session_pool = create_session_pool(engine)
     weather_service = WeatherService(session_pool)
-    await weather_service.fetch_and_store_weather(
-        latitude=LATITUDE, longitude=LONGITUDE
-    )
+    data_export_service = DataExportService(weather_service)
+
+    await data_export_service.export_latest_weather_data_to_xlsx("data.xlsx")
 
 
 if __name__ == "__main__":
