@@ -5,7 +5,9 @@ from .base import Base, TimestampMixin
 
 
 class WeatherData(Base, TimestampMixin):
-    __tablename__ = 'weather_data'
+    """Model representing weather data records in the database."""
+    
+    __tablename__ = 'weather_data'  # Name of the table in the database
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     temperature: Mapped[float] = mapped_column(Float)
