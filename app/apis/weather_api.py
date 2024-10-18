@@ -3,9 +3,9 @@ import requests_cache
 from openmeteo_sdk.WeatherApiResponse import WeatherApiResponse
 from retry_requests import retry
 
-from config import LATITUDE, LONGITUDE
-from schemas import WeatherDataModel
-from utils import (
+from app.config import LATITUDE, LONGITUDE
+from app.schemas.weather_schema import WeatherDataModel
+from app.misc.utils import (
     convert_pressure_to_mm_hg,
     convert_wind_direction,
     get_precipitation_info,

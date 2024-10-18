@@ -1,6 +1,6 @@
 import asyncio
 
-from config import LATITUDE, LONGITUDE, get_db_url
+from app.config import LATITUDE, LONGITUDE, get_db_url
 from database.setup import create_engine, create_session_pool
 from services.weather_service import WeatherService
 

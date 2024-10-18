@@ -1,8 +1,8 @@
 from sqlalchemy import insert
 
+from app.schemas.weather_schema import WeatherDataModel
 from database.models.weater_data import WeatherData
 from database.repo.base import BaseRepo
-from schemas import WeatherDataModel
 
 
 class WeatherDataRepo(BaseRepo):
