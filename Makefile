@@ -8,7 +8,8 @@ help:
 	down \
 	up \
 	migrate \
-	makemigrations
+	makemigrations \
+	export
 
 down:                      
 	@docker compose down
@@ -22,3 +23,6 @@ migrate:
 makemigrations:            
 	@read -p "Enter migration message: " message; \
 	docker compose run --rm weather alembic revision --autogenerate -m "$$message"
+
+export:                   
+	@docker compose run --rm weather python -m app.export_data
