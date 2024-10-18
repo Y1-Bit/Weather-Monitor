@@ -7,8 +7,8 @@ services:
     working_dir: "/usr/src/app/weather"
     volumes:
       - .:/usr/src/app/weather
-    command: python3 -m main
-    restart: always
+    command: python3 -m app.main
+    restart: unless-stopped	
     env_file:
       - .env
 
