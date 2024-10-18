@@ -8,3 +8,7 @@ class WeatherDataModel(BaseModel):
     pressure: float
     precipitation_type: str
     precipitation_amount: float
+
+
+class WeatherDataModelList(BaseModel):
+    weather_data: list[WeatherDataModel]
