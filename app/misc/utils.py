@@ -16,7 +16,7 @@ def convert_wind_direction(degrees: float) -> str:
         str: Cardinal direction as a string (e.g., "С", "ЮЗ").
     """
     directions = ["С", "СВ", "В", "ЮВ", "Ю", "ЮЗ", "З", "СЗ"]
-    index = round(degrees / 45) % 8  # Calculate the index for directions
+    index = round(degrees / 45) % 8  
     return directions[index]
 
 
@@ -29,7 +29,7 @@ def convert_pressure_to_mm_hg(surface_pressure: float) -> float:
     Returns:
         float: Pressure in mm Hg.
     """
-    return surface_pressure * 0.75006  # Conversion factor
+    return surface_pressure * 0.75006 
 
 
 def get_precipitation_info(
@@ -62,8 +62,8 @@ def export_weather_data(weather_data: dict, file_name="weather_data.xlsx"):
         weather_data (dict): Weather data to export.
         file_name (str): Name of the Excel file (default is "weather_data.xlsx").
     """
-    df = pd.DataFrame([weather_data])  # Convert the weather data dictionary to a DataFrame
-    df.to_excel(file_name, index=False)  # Save DataFrame to Excel
+    df = pd.DataFrame([weather_data]) 
+    df.to_excel(file_name, index=False)
 
 
 def export_latest_weather_data_to_xlsx(
@@ -75,11 +75,10 @@ def export_latest_weather_data_to_xlsx(
         latest_weather_data (WeatherDataModelList): List of latest weather data.
         file_path (str): Path to save the Excel file.
     """
-    wb = openpyxl.Workbook()  # Create a new workbook
-    ws = wb.active  # Get the active worksheet
-    ws.title = "Latest Weather Data"  # Set the title of the worksheet
+    wb = openpyxl.Workbook()  
+    ws = wb.active
+    ws.title = "Latest Weather Data" 
 
-    # Define headers for the Excel file
     headers = [
         "Temperature",
         "Wind Direction",
@@ -88,9 +87,8 @@ def export_latest_weather_data_to_xlsx(
         "Precipitation Type",
         "Precipitation Amount",
     ]
-    ws.append(headers)  # Append headers to the worksheet
+    ws.append(headers)  
 
-    # Append each weather data record to the worksheet
     for weather in latest_weather_data.weather_data:
         ws.append(
             [
@@ -103,6 +101,5 @@ def export_latest_weather_data_to_xlsx(
             ]
         )
 
-    # Save the workbook to the specified file path
     save_path = Path(file_path)
     wb.save(save_path)

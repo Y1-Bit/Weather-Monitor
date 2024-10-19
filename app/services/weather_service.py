@@ -11,7 +11,7 @@ from app.database.repo.requests import RequestsRepo
 class WeatherService:
     """Service for fetching and storing weather data."""
     
-    session_pool: async_sessionmaker[AsyncSession]  # Async session pool for database interactions
+    session_pool: async_sessionmaker[AsyncSession]  
 
     async def fetch_and_store_weather(self, latitude: float, longitude: float):
         """Fetch weather data from the API and store it in the database.
@@ -20,16 +20,13 @@ class WeatherService:
             latitude (float): Latitude for the weather data.
             longitude (float): Longitude for the weather data.
         """
-        # Fetch weather data from the API
         weather_data = fetch_weather_data(latitude, longitude)
         
-        # Get the current weather information as a structured model
         current_weather = get_current_weather(weather_data)
 
-        # Use an async session to interact with the database
         async with self.session_pool() as session:
-            repo = RequestsRepo(session)  # Create a repository instance
-            await repo.weather.add_weather_data(current_weather)  # Store the current weather data
+            repo = RequestsRepo(session)  
+            await repo.weather.add_weather_data(current_weather)  
 
     async def get_latest_weather_data(self):
         """Retrieve the latest weather data from the database.
@@ -38,6 +35,6 @@ class WeatherService:
             WeatherDataModelList: List of the latest weather data records.
         """
         async with self.session_pool() as session:
-            repo = RequestsRepo(session)  # Create a repository instance
-            data = await repo.weather.get_latest_weather_data(10)  # Get the latest 10 weather records
-        return data  # Return the fetched data
+            repo = RequestsRepo(session)  
+            data = await repo.weather.get_latest_weather_data(10)  
+        return data  

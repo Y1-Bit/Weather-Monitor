@@ -11,7 +11,6 @@ def create_engine(url: str, echo=False):
     Returns:
         Engine: An instance of the asynchronous SQLAlchemy engine.
     """
-    # Create the asynchronous engine with the provided URL and logging option
     engine = create_async_engine(url, echo=echo)
     return engine
 
@@ -25,6 +24,5 @@ def create_session_pool(engine):
     Returns:
         async_sessionmaker: A session factory for creating asynchronous sessions.
     """
-    # Create a session factory that will be used to create async sessions
     session_pool = async_sessionmaker(bind=engine, expire_on_commit=False)
     return session_pool

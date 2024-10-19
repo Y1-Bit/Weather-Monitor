@@ -14,7 +14,6 @@ class WeatherDataRepo(BaseRepo):
         Args:
             weather_data (WeatherDataModel): The weather data to be added.
         """
-        # Create an insert statement for the WeatherData model
         insert_stmt = insert(WeatherData).values(
             temperature=weather_data.temperature,
             wind_direction=weather_data.wind_direction,
@@ -24,7 +23,6 @@ class WeatherDataRepo(BaseRepo):
             precipitation_amount=weather_data.precipitation_amount,
         )
 
-        # Execute the insert statement and commit the transaction
         await self.session.execute(insert_stmt)
         await self.session.commit()
 
@@ -37,14 +35,11 @@ class WeatherDataRepo(BaseRepo):
         Returns:
             WeatherDataModelList: A list of the latest weather data records.
         """
-        # Create a select query to get the latest weather data ordered by creation time
         query = select(WeatherData).order_by(WeatherData.created_at.desc()).limit(limit)
         
-        # Execute the query and retrieve the results
         result = await self.session.execute(query)
         weather_data_objects = result.scalars().all()
 
-        # Map the retrieved data to WeatherDataModel instances
         return WeatherDataModelList(
             weather_data=[
                 WeatherDataModel(

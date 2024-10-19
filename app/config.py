@@ -1,16 +1,13 @@
 import os
 
-# Load environment variables for PostgreSQL database connection
-POSTGRES_USER = os.getenv("POSTGRES_USER")  # Database username
-POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")  # Database password
-POSTGRES_DB = os.getenv("POSTGRES_DB")  # Database name
-DB_HOST = os.getenv("DB_HOST")  # Database host address
+POSTGRES_USER = os.getenv("POSTGRES_USER")  
+POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")  
+POSTGRES_DB = os.getenv("POSTGRES_DB")  
+DB_HOST = os.getenv("DB_HOST")  
 
-# Default geographic coordinates for fetching weather data (latitude and longitude)
-LATITUDE = 55.7522  # Latitude for Moscow
-LONGITUDE = 37.6156  # Longitude for Moscow
+LATITUDE = 55.7522  
+LONGITUDE = 37.6156  
 
-# Time interval (in minutes) for scheduling weather data fetching
 INTERVAL_MINUTES = 3
 
 

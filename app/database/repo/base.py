@@ -11,4 +11,4 @@ class BaseRepo:
         Args:
             session (AsyncSession): An asynchronous session for interacting with the database.
         """
-        self.session: AsyncSession = session  # Store the provided session for later use
+        self.session: AsyncSession = session

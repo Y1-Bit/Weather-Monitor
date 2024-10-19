@@ -8,7 +8,7 @@ from app.database.repo.weater_data import WeatherDataRepo
 class RequestsRepo:
     """Repository for managing different database requests using an asynchronous session."""
     
-    session: AsyncSession  # Asynchronous session for database operations
+    session: AsyncSession
 
     @property
     def weather(self) -> WeatherDataRepo:
@@ -17,4 +17,4 @@ class RequestsRepo:
         Returns:
             WeatherDataRepo: An instance of WeatherDataRepo to interact with weather data.
         """
-        return WeatherDataRepo(self.session)  # Create and return an instance of WeatherDataRepo using the session
+        return WeatherDataRepo(self.session)
