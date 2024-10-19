@@ -22,6 +22,7 @@ POSTGRES_USER=admin
 POSTGRES_PASSWORD=password
 POSTGRES_DB=database
 DB_HOST=database
+DB_PORT=5432
 ```
 
 
